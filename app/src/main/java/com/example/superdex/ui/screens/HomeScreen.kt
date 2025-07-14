@@ -1,5 +1,6 @@
 package com.example.superdex.ui.screens
 
+import android.content.res.Configuration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,10 +15,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.superdex.ui.theme.LocalAppColors
+import com.example.superdex.ui.theme.SuperDexTheme
 
 @Composable
 fun HomeScreenUi(){
@@ -28,7 +32,7 @@ fun HomeScreenUi(){
             .padding(start = 16.dp, end = 16.dp)
             .background(LocalAppColors.current.background)
     ){
-
+        TopBar()
     }
 }
 
@@ -45,11 +49,25 @@ fun TopBar(
             text = stringResource(com.example.superdex.R.string.app_name),
             style = MaterialTheme.typography.displayMedium.copy(
                 fontFamily = FontFamily.Default,
-//                color = LocalAppColors.current.appTitle
+                color = LocalAppColors.current.primaryText
             ),
             modifier = Modifier.align(Alignment.Center)
         )
 
 
+    }
+}
+
+fun BottomNavigationBar(){
+
+}
+
+
+@Preview
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun DashboardScreenPreview() {
+    SuperDexTheme {
+        HomeScreenUi()
     }
 }
