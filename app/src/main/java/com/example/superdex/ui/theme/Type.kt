@@ -19,11 +19,11 @@ val Afacad = FontFamily(
     Font(R.font.afacad_regular, FontWeight.Normal)
 )
 
-val LogoText = TextStyle(
-    fontFamily = Afacad,
-    fontWeight = FontWeight.Normal,
-    fontSize = 24.sp
-)
+//val LogoText = TextStyle(
+//    fontFamily = Afacad,
+//    fontWeight = FontWeight.Normal,
+//    fontSize = 24.sp
+//)
 
 
 // Set of Material typography styles to start with

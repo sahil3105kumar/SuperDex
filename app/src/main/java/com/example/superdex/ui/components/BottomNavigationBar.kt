@@ -6,16 +6,17 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.Role.Companion.Button
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.superdex.R
 import com.example.superdex.ui.theme.SuperDexTheme
 import java.nio.file.WatchEvent
 
-open class NavigationItem(val route: String, val icon: Int, val title: String){
-    object Home: NavigationItem("home", R.drawable.home, "Home")
-    object Heroes: NavigationItem("music", R.drawable.heroes, "Music")
-    object Fav: NavigationItem("movies", R.drawable.fav, "Movies")
-    object Settings: NavigationItem("books", R.drawable.settings, "Books")
+open class NavigationItem( val icon: Int, val title: String){
+    object Home: NavigationItem( R.drawable.home, "Home")
+    object Heroes: NavigationItem( R.drawable.heroes, "Music")
+    object Fav: NavigationItem( R.drawable.fav, "Movies")
+    object Settings: NavigationItem( R.drawable.settings, "Books")
 
 }
 

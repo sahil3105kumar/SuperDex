@@ -26,7 +26,7 @@ fun TopBar(
             text = stringResource(com.example.superdex.R.string.app_name),
             style = MaterialTheme.typography.displayMedium.copy(
                 fontFamily = FontFamily.Default,
-                color = LocalAppColors.current.primary
+                color = LocalAppColors.current.textColor
             ),
             modifier = Modifier.align(Alignment.Center)
         )

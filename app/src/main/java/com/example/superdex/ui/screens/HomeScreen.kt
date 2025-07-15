@@ -49,7 +49,7 @@ fun TopBar(
             text = stringResource(com.example.superdex.R.string.app_name),
             style = MaterialTheme.typography.displayMedium.copy(
                 fontFamily = FontFamily.Default,
-                color = LocalAppColors.current.primaryText
+                color = LocalAppColors.current.textColor
             ),
             modifier = Modifier.align(Alignment.Center)
         )
@@ -58,16 +58,13 @@ fun TopBar(
     }
 }
 
-fun BottomNavigationBar(){
-
-}
 
 
 @Preview
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun DashboardScreenPreview() {
-    SuperDexTheme {
+//    SuperDexTheme {
         HomeScreenUi()
-    }
+//    }
 }
