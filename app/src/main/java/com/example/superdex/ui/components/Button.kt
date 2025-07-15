@@ -3,13 +3,18 @@ package com.example.superdex.ui.components
 import android.content.res.Configuration
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -35,7 +40,9 @@ fun Button(
     OutlinedButton(
         onClick = {},
         modifier = modifier
-            .height(50.dp)
+            .height(40.dp)
+            .width(80.dp)
+
         ,
         border = BorderStroke(1.dp, contentColor),
         colors = ButtonDefaults.outlinedButtonColors(
@@ -44,22 +51,17 @@ fun Button(
 
         )
     ) {
-        Image(
-            painter = painterResource(id = image),
-            contentDescription = text,
-            modifier = modifier
-                .padding(end = 8.dp)
-        )
+            Image(
+                painter = painterResource(id = image),
+                contentDescription = text,
+                modifier = modifier
+                    .padding(end = 8.dp)
+                    .fillMaxWidth(),
+//                alignment =Alignment.Center
 
-        Text(
-            text = text,
-            style = MaterialTheme.typography.bodyLarge.copy(
-                fontFamily = Inter
-            ),
-            textAlign = TextAlign.Center,
-            modifier = modifier
-                .padding(horizontal = 16.dp)
-        )
+            )
+
+
     }
 }
 
@@ -70,10 +72,10 @@ fun Button(
 
 @Composable
 fun ButtonPreview(){
-    SuperDexTheme {
+//    SuperDexTheme {
         Button(
             "Home",
             R.drawable.home,
         )
-    }
+//    }
 }
