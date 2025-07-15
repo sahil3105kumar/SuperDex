@@ -8,6 +8,7 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -15,63 +16,41 @@ import androidx.compose.ui.platform.LocalContext
 val LocalAppColors = staticCompositionLocalOf { LightColorScheme }
 
 data class AppColors(
-    val primary: Color,
-    val onPrimary: Color,
-    val secondary: Color,
     val background: Color,
-    val surface: Color,
-    val onBackground: Color,
-    val onSurface: Color,
-    val error: Color,
+    val cardFills: Color,
+    val buttonFills: Color,
+    val textColor: Color,
 )
 
-private val LightColorScheme = lightColorScheme(
-    primary = SageLight,
-    onPrimary = DeepCharcoal,
-    secondary = SageDark,
-    background = BackgroundDefault,
-    surface = SurfaceDefault,
-    onBackground = PrimaryText,
-    onSurface = PrimaryText,
-    error = ErrorRed,
-    surfaceVariant = LighterSage,
-    onSurfaceVariant = PrimaryText,
-    onSecondary = TextTypeLight
+private val DarkColorScheme = AppColors(
+   background = DarkNavy,
+    cardFills = CharcoalBlue,
+    buttonFills = TaupeGray,
+    textColor = Cream,
 )
 
-private val DarkColorScheme = darkColorScheme(
-    primary = SageDark,
-    onPrimary = PureWhite,
-    secondary = DeepCharcoal,
-    background = DeepCharcoal,
-    surface = MidGray,
-    onBackground = PureWhite,
-    onSurface = PureWhite,
-    error = ErrorRed,
-    surfaceVariant = MidGray,
-    onSurfaceVariant = PrimaryText,
-    onSecondary = TextTypeDark
+private val LightColorScheme = AppColors(
+    background = JungleGreen,
+    cardFills = AmazonGreen,
+    buttonFills = SageGreen,
+    textColor = PastelYellow,
+
 )
 
 @Composable
-fun DigiGateTheme(
+fun SuperDexTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
 
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+    val colorScheme =
+        if (darkTheme) com.example.superdex.ui.theme.DarkColorScheme else com.example.superdex.ui.theme.LightColorScheme
+    CompositionLocalProvider(com.example.superdex.ui.theme.LocalAppColors provides colorScheme) {
+        MaterialTheme(
+            colorScheme = if (darkTheme) darkColorScheme() else lightColorScheme(),
+            content = content
+        )
     }
-
-    MaterialTheme(
-        colorScheme = colorScheme,
-        content = content
-    )
 }
