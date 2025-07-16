@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import com.example.superdex.ui.theme.LocalAppColors
 
 @Composable
-fun TopBar(
+fun TopBarUi(
 ) {
     Box(
         modifier = Modifier
@@ -38,5 +38,5 @@ fun TopBar(
 @Preview
 @Composable
 fun TopAppBarPreview() {
-    TopBar()
+    TopBarUi()
 }
