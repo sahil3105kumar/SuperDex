@@ -1,5 +1,6 @@
 package com.example.superdex.ui.components
 
+import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -54,7 +55,7 @@ fun SuperheroCard(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(IntrinsicSize.Min)
-                .background(LocalAppColors.current.cardFills)
+                .background(LocalAppColors.current.tertiary)
         ) {
             Column(
                 modifier = Modifier
@@ -91,6 +92,7 @@ fun SuperheroCard(
 
 
 @Preview
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun CardPreview() {
     SuperheroCard(

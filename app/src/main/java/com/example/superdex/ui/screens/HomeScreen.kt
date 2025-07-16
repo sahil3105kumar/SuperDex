@@ -41,6 +41,7 @@ fun HomeScreenUi() {
         TopBar()
 
 
+
     }
 }
 
@@ -51,7 +52,7 @@ fun HomeScreenUi() {
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun DashboardScreenPreview() {
-//    SuperDexTheme {
+    SuperDexTheme {
         HomeScreenUi()
-//    }
+    }
 }
