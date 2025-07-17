@@ -2,6 +2,10 @@ package com.example.superdex.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
+
+// TopBar
+val DarkRed = Color(0xFF390707)
+
 // Text
 
 val reddishPink = Color(0xFFAD7171)

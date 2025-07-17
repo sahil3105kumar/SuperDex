@@ -15,7 +15,7 @@ import com.example.superdex.R
 
 open class NavigationItem( val icon: Int, val title: String){
     object Home: NavigationItem( R.drawable.home, "Home")
-    object Heroes: NavigationItem( R.drawable.heroes, "Music")
+    object Heroes: NavigationItem( R.drawable.ironman, "Music")
     object Fav: NavigationItem( R.drawable.fav, "Movies")
     object Settings: NavigationItem( R.drawable.settings, "Books")
 
@@ -34,7 +34,7 @@ fun BottomNavigationBarUi(){
        verticalAlignment = Alignment.Bottom
    ){
         Button("Home", R.drawable.home)
-        Button("Heroes", R.drawable.heroes)
+        Button("Heroes", R.drawable.ironman)
         Button("Fav", R.drawable.fav)
         Button("Settings", R.drawable.settings)
    }

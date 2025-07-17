@@ -55,7 +55,7 @@ fun HeroCardFSUi(
             ) {
                 SuperheroCardUi(
                     Modifier.fillMaxWidth(),
-                    R.drawable.heroes,
+                    R.drawable.ironman,
                     "Thor",
                     "Marvel"
 
