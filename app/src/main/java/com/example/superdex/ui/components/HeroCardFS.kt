@@ -4,6 +4,7 @@ import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
@@ -31,19 +32,18 @@ import com.example.superdex.ui.theme.LocalAppColors
 
 @Composable
 fun HeroCardFSUi(
-    modifier: Modifier = Modifier,
+//    modifier: Modifier = Modifier,
 ) {
-    Card(
+    Box(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxWidth()
             .padding(1.dp)
             .background(LocalAppColors.current.tertiary),
-
-        elevation = CardDefaults.cardElevation(8.dp)
     ) {
         Column(
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxWidth()
+                .height(650.dp)
                 .background(LocalAppColors.current.tertiary)
         ) {
             Row(
@@ -82,7 +82,7 @@ fun HeroCardFSUi(
 
             Row(
                 modifier = Modifier
-                    .fillMaxSize()
+                    .fillMaxWidth()
                     .height(IntrinsicSize.Min)
             ) {
                 Column(

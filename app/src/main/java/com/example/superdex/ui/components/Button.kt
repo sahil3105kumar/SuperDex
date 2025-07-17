@@ -3,6 +3,7 @@ package com.example.superdex.ui.components
 import android.content.res.Configuration
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -10,6 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.LoadingIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
@@ -23,6 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.superdex.R
 import com.example.superdex.ui.theme.Inter
+import com.example.superdex.ui.theme.LocalAppColors
 import com.example.superdex.ui.theme.SuperDexTheme
 
 @Composable
@@ -33,15 +36,15 @@ fun Button(
 
 ) {
 
-    val buttonColor = Color.White
-    val contentColor = Color.Black
+    val buttonColor = LocalAppColors.current.tertiary
+    val contentColor = LocalAppColors.current.tertiary
 
 
     OutlinedButton(
         onClick = {},
         modifier = modifier
-            .height(40.dp)
-            .width(80.dp)
+            .height(60.dp)
+            .width(90.dp)
 
         ,
         border = BorderStroke(1.dp, contentColor),
@@ -56,7 +59,8 @@ fun Button(
                 contentDescription = text,
                 modifier = modifier
                     .padding(end = 8.dp)
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                .background(LocalAppColors.current.tertiary),
 //                alignment =Alignment.Center
 
             )

@@ -2,16 +2,31 @@ package com.example.superdex.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
+// Text
 
-val DarkNavy = Color(0xFF07122A)
-val CharcoalBlue = Color(0xFF111827)
-val TaupeGray = Color(0xFF333333)
-val Cream = Color( 0xFFF5F5F5)
+val reddishPink = Color(0xFFAD7171)
 
-val JungleGreen = Color(0xFF008000)
-val AmazonGreen = Color(0xFF32CD32)
-val SageGreen = Color(0xFF228B22)
-val PastelYellow = Color(0xFFFFE0B2)
+val almostBlack = Color(0xFF1A1A1A)
+
+val red = Color(0xFF4B1E1B)
+val white = Color(0xFFFFFFFF)
+
+
+
+//light theme
+val mustardYellow = Color(0xFFCC9933)
+val lavender = Color(0xFFC7B9D5)
+val powderBlue = Color(0xFFDCE6EE)
+
+
+
+
+//Dark theme
+val midnightBlue = Color(0xFF1C243B)
+val royalPurple = Color(0xFF4B1A64)
+val charcoalGreen = Color(0xFF3A4E47)
+
+
 
 
 
