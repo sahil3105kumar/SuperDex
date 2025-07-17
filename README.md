@@ -100,4 +100,4 @@ Backend integration
 
 
 # Design Preview
-[figma]()
+[figma](https://www.figma.com/design/D9IoSdx0YnbkzUElmqb5UI/Untitled?node-id=0-1&p=f&t=gfPNFmWg8y9ONzvP-0)
