@@ -2,6 +2,7 @@ package com.example.superdex.ui.screens
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -24,14 +25,11 @@ import com.example.superdex.ui.components.HeroCardFSUi
 import com.example.superdex.ui.components.TopBarUi
 import com.example.superdex.ui.theme.LocalAppColors
 import com.example.superdex.ui.theme.SuperDexTheme
-import androidx.compose.material3.Scaffold
+
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarColors
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.style.TextAlign
-import com.example.superdex.ui.components.Button
 import com.example.superdex.R
+import com.example.superdex.ui.components.ButtonUi
+
 
 @Composable
 fun HomeScreenUi() {
@@ -40,24 +38,30 @@ fun HomeScreenUi() {
         modifier = Modifier
             .fillMaxSize()
             .padding(start = 16.dp, end = 16.dp)
+            .background(LocalAppColors.current.background)
     ) {
 
 
         Scaffold(
-
-            modifier = Modifier.fillMaxSize()
-                .background(LocalAppColors.current.background),
 
             topBar = {
                 TopBarUi()
             },
             bottomBar = {
                 BottomAppBar(
-                    modifier = Modifier.padding(0.dp)
+                    modifier = Modifier.fillMaxWidth(),
+                    containerColor = LocalAppColors.current.background
                 ) {
-                    BottomNavigationBarUi()
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                    ) {
+                        BottomNavigationBarUi()
+                    }
                 }
             },
+
+            containerColor = LocalAppColors.current.background,
 
 
             ) { innerPadding ->
@@ -68,21 +72,48 @@ fun HomeScreenUi() {
                     .padding(innerPadding)
             ) {
 
-                item{
+                item {
 
-                    Text("Categories",
+                    Text(
+                        "Categories",
                         style = MaterialTheme.typography.titleLarge,
-                        color = LocalAppColors.current.primary)
+                        color = LocalAppColors.current.primary
+                    )
                     LazyRow(
-                        modifier = Modifier.fillMaxWidth()
-                            .height(100.dp)
-                    ){
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(100.dp),
+                        horizontalArrangement = Arrangement.SpaceBetween
 
+                    ) {
+                            item{
+                                ButtonUi("Marvel", R.drawable.marvel)
+                                ButtonUi("Marvel", R.drawable.dc)
+                                ButtonUi("Anime", R.drawable.anime)
+                                ButtonUi("Games", R.drawable.games)
+                                ButtonUi("Movies", R.drawable.movies)
+                            }
+                    }
+
+                    Column() {
+                        Row(){
+
+                        }
+
+                        Row(){
+
+                        }
+
+                        Row(){
+
+                        }
+
+                        Row(){
+
+                        }
                     }
                 }
             }
-
-
 
 
         }
