@@ -98,7 +98,7 @@ fun SuperheroCardUi(
 fun CardPreview() {
     SuperheroCardUi(
         Modifier.fillMaxWidth(),
-        R.drawable.ironman,
+        R.drawable.heroes,
         "Thor",
         "Marvel"
     )
