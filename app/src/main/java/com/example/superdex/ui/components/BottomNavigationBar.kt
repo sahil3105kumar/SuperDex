@@ -1,6 +1,7 @@
 package com.example.superdex.ui.components
 
 import android.content.res.Configuration
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.superdex.R
+import com.example.superdex.ui.theme.LocalAppColors
 
 open class NavigationItem( val icon: Int, val title: String){
     object Home: NavigationItem( R.drawable.home, "Home")
@@ -29,7 +31,8 @@ fun BottomNavigationBarUi(){
    Row(
        modifier = Modifier
            .fillMaxSize()
-           .height(150.dp),
+           .height(100.dp)
+           .background(LocalAppColors.current.buttonFills),
        horizontalArrangement = Arrangement.SpaceAround,
        verticalAlignment = Alignment.Bottom
    ){
